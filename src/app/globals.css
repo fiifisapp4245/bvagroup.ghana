@@ -72,7 +72,7 @@
   --card-foreground: oklch(0.145 0 0);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.47 0.19 264);       /* BVA blue */
+  --primary: oklch(0.145 0 0);            /* BVA black */
   --primary-foreground: oklch(0.985 0 0);
   --secondary: oklch(0.97 0 0);
   --secondary-foreground: oklch(0.205 0 0);
@@ -83,8 +83,8 @@
   --destructive: oklch(0.577 0.245 27.325);
   --border: oklch(0.922 0 0);
   --input: oklch(0.922 0 0);
-  --ring: oklch(0.47 0.19 264 / 40%);
-  --chart-1: oklch(0.47 0.19 264);
+  --ring: oklch(0.145 0 0 / 30%);
+  --chart-1: oklch(0.145 0 0);
   --chart-2: oklch(0.556 0 0);
   --chart-3: oklch(0.439 0 0);
   --chart-4: oklch(0.371 0 0);
@@ -99,10 +99,10 @@
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.47 0.19 264 / 40%);
 
-  /* ─── BVA Group / Main — Blue ──────────────────────────── */
-  --bva-blue:       #1B4FD8;   /* Primary brand blue */
-  --bva-blue-light: #3B6FEF;   /* Hover / active states */
-  --bva-blue-dark:  #0F3399;   /* Nav, footer, deep sections */
+  /* ─── BVA Group / Main — Black ─────────────────────────── */
+  --bva-blue:       #0a0a0a;   /* Primary brand black */
+  --bva-blue-light: #1a1a1a;   /* Hover / active states */
+  --bva-blue-dark:  #000000;   /* Nav, footer, deep sections */
 
   /* ─── BVA Properties — Black ───────────────────────────── */
   --bva-properties-bg:      #0A0A0A;   /* Page background */
