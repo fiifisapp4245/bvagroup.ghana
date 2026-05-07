@@ -11,7 +11,7 @@ const WA_GENERAL =
 
 const stats = [
   { value: '2018', label: 'Founded' },
-  { value: '3', label: 'Active Projects' },
+  { value: '2', label: 'Active Projects' },
   { value: '1', label: 'Mining Operation' },
   { value: 'Accra, GH', label: 'Headquarters' },
 ]
@@ -138,7 +138,7 @@ export default function HomePage() {
                 Premium residential, commercial, and mixed-use developments designed for lasting value across Ghana.
               </p>
               <ul className="space-y-2.5 mb-8">
-                {['Residential', 'Commercial &amp; Retail', 'Industrial &amp; Mixed-Use'].map((type) => (
+                {['Residential', 'Commercial &amp; Retail', 'Industrial &amp; Administration'].map((type) => (
                   <li key={type} className="flex items-center gap-2.5 text-[#444] text-sm">
                     <span className="w-1 h-1 rounded-full bg-[#1B4FD8] shrink-0" />
                     <span dangerouslySetInnerHTML={{ __html: type }} />
@@ -173,13 +173,13 @@ export default function HomePage() {
                 {/* Project pills bottom-left */}
                 <div className="absolute bottom-0 inset-x-0 p-8">
                   <div className="text-white text-[10px] uppercase tracking-[0.2em] mb-4">
-                    Active projects
+                    Projects
                   </div>
                   <div className="flex flex-col gap-2">
                     {[
-                      { name: 'Gucci House', type: 'Residential', status: 'Ongoing' },
-                      { name: 'Bethel Court', type: 'Commercial', status: 'Ongoing' },
-                      { name: 'Palm Lane Avenue', type: 'Mixed-Use', status: 'Coming Soon' },
+                      { name: 'Gucci House', type: 'Residential', status: 'Sold' },
+                      { name: 'Better Court', type: 'Commercial & Retail', status: 'Ongoing' },
+                      { name: 'New Palm View', type: 'Residential', status: 'Coming Soon' },
                     ].map(({ name, type, status }) => (
                       <div
                         key={name}
@@ -239,7 +239,7 @@ export default function HomePage() {
                           Kutukrom Gold Project
                         </div>
                         <div className="text-white/70 text-xs mt-0.5">
-                          Eastern Region, Ghana · Gold
+                          Western Region, Ghana · Gold
                         </div>
                       </div>
                       <div className="text-white text-[10px] uppercase tracking-wider">
@@ -263,7 +263,7 @@ export default function HomePage() {
                 BVA Resources
               </h2>
               <p className="text-[#444] text-base leading-relaxed mb-6 max-w-[380px]">
-                Responsible mineral exploration and mining operations, anchored at the Kutukrom Gold Project in Ghana&apos;s Eastern Region.
+                Responsible mineral exploration and mining operations, anchored at the Kutukrom Gold Project in Ghana&apos;s Western Region.
               </p>
               <ul className="space-y-2.5 mb-8">
                 {['Mineral Exploration', 'Mining Operations', 'Sustainable Development'].map(

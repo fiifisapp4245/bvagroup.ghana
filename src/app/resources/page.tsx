@@ -7,7 +7,7 @@ import { ResourcesPartnership } from './resources-partnership'
 export const metadata: Metadata = {
   title: 'BVA Resources | Mineral Exploration & Mining Operations',
   description:
-    'BVA Resources operates responsible mineral exploration and mining at the Kutukrom Gold Project in Ghana\'s Eastern Region. Seeking serious investment and operational partners.',
+    'BVA Resources operates responsible mineral exploration and mining at the Kutukrom Gold Project in Ghana\'s Western Region. Seeking serious investment and operational partners.',
 }
 
 const scopeItems = [
@@ -15,7 +15,7 @@ const scopeItems = [
     number: '01',
     title: 'Mineral Exploration',
     description:
-      'Systematic geological surveys and geochemical analysis to identify and delineate mineralised zones across our concession area in Ghana\'s Eastern Region.',
+      'Systematic geological surveys and geochemical analysis to identify and delineate mineralised zones across our concession area in Ghana\'s Western Region.',
   },
   {
     number: '02',
@@ -33,7 +33,7 @@ const scopeItems = [
 
 const projectStats = [
   { label: 'Primary Mineral', value: 'Gold' },
-  { label: 'Location', value: 'Eastern Region, Ghana' },
+  { label: 'Location', value: 'Western Region, Ghana' },
   { label: 'Current Stage', value: 'Exploration' },
   { label: 'Concession Size', value: 'TBC' },
 ]
@@ -192,7 +192,7 @@ export default function ResourcesPage() {
                 Kutukrom Gold Project
               </h2>
               <p className="text-white/55 text-base leading-relaxed mb-8">
-                Located in Ghana&apos;s Eastern Region, the Kutukrom Gold Project represents BVA
+                Located in Ghana&apos;s Western Region, the Kutukrom Gold Project represents BVA
                 Resources&apos; primary operational focus. Exploration is underway across a defined
                 concession, guided by systematic geological assessment and responsible land
                 stewardship.
