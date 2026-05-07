@@ -225,7 +225,7 @@ export default function HomePage() {
                   className="absolute inset-0"
                   style={{
                     background:
-                      'linear-gradient(to top, rgba(13,51,32,0.95) 0%, rgba(13,51,32,0.3) 42%, transparent 68%)',
+                      'linear-gradient(to top, rgba(0,0,0,0.90) 0%, rgba(0,0,0,0.35) 42%, transparent 68%)',
                   }}
                 />
                 <div className="absolute bottom-0 inset-x-0 p-8">
@@ -269,7 +269,7 @@ export default function HomePage() {
                 {['Mineral Exploration', 'Mining Operations', 'Sustainable Development'].map(
                   (item) => (
                     <li key={item} className="flex items-center gap-2.5 text-[#444] text-sm">
-                      <span className="w-1 h-1 rounded-full bg-[#22C55E] shrink-0" />
+                      <span className="w-1 h-1 rounded-full bg-[#1B4FD8] shrink-0" />
                       {item}
                     </li>
                   ),

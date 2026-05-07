@@ -1,9 +1,11 @@
 import type { Metadata } from 'next'
 import { IBM_Plex_Sans, Inter } from 'next/font/google'
+import { Suspense } from 'react'
 import './globals.css'
 import { Nav } from '@/components/nav'
 import { Footer } from '@/components/footer'
 import { WhatsAppButton } from '@/components/whatsapp-button'
+import { PostHogPageView } from '@/components/posthog-page-view'
 
 const ibmPlexSans = IBM_Plex_Sans({
   variable: '--font-ibm-plex-sans',
@@ -42,6 +44,9 @@ export default function RootLayout({
       className={`${ibmPlexSans.variable} ${inter.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-white text-[#1a1a1a]">
+        <Suspense fallback={null}>
+          <PostHogPageView />
+        </Suspense>
         <Nav />
         <main className="flex-1">{children}</main>
         <Footer />

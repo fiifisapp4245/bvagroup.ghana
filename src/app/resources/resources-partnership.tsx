@@ -13,13 +13,13 @@ export function ResourcesPartnership() {
   }
 
   return (
-    <section className="bg-[#0d3320] py-24 lg:py-32">
+    <section className="bg-[#080808] py-24 lg:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="grid grid-cols-12 gap-8 lg:gap-16">
 
           {/* Left — heading */}
           <div className="col-span-12 lg:col-span-5">
-            <p className="text-green-400/50 text-[10px] uppercase tracking-[0.25em] mb-5 font-medium">
+            <p className="text-white/45 text-[10px] uppercase tracking-[0.25em] mb-5 font-medium">
               Partnerships
             </p>
             <h2
@@ -57,61 +57,64 @@ export function ResourcesPartnership() {
 
           {/* Right — inquiry form */}
           <div className="col-span-12 lg:col-span-7">
-            <form onSubmit={handleSubmit} className="bg-[#0a2a18] rounded-2xl p-8 border border-green-900/30 space-y-5">
+            <form onSubmit={handleSubmit} className="bg-white rounded-2xl p-8 border border-white/10 space-y-5">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                 <div>
-                  <label className="text-white/40 text-[10px] uppercase tracking-[0.2em] block mb-2">
+                  <label className="text-[#999] text-[10px] uppercase tracking-[0.2em] block mb-2">
                     Full Name
                   </label>
                   <input
                     type="text"
                     name="name"
                     placeholder="Your full name"
-                    className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white text-sm placeholder:text-white/25 focus:outline-none focus:border-green-400/40 transition-colors"
+                    className="w-full bg-[#f5f5f3] border border-gray-200 rounded-lg px-4 py-3 text-[#0f0f0f] text-sm placeholder:text-[#bbb] focus:outline-none focus:border-[#1B4FD8] transition-colors"
                   />
                 </div>
                 <div>
-                  <label className="text-white/40 text-[10px] uppercase tracking-[0.2em] block mb-2">
+                  <label className="text-[#999] text-[10px] uppercase tracking-[0.2em] block mb-2">
                     Organisation
                   </label>
                   <input
                     type="text"
                     name="organisation"
                     placeholder="Company or institution"
-                    className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white text-sm placeholder:text-white/25 focus:outline-none focus:border-green-400/40 transition-colors"
+                    className="w-full bg-[#f5f5f3] border border-gray-200 rounded-lg px-4 py-3 text-[#0f0f0f] text-sm placeholder:text-[#bbb] focus:outline-none focus:border-[#1B4FD8] transition-colors"
                   />
                 </div>
               </div>
               <div>
-                <label className="text-white/40 text-[10px] uppercase tracking-[0.2em] block mb-2">
+                <label className="text-[#999] text-[10px] uppercase tracking-[0.2em] block mb-2">
                   Interest Area
                 </label>
-                <select name="interest" className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white text-sm focus:outline-none focus:border-green-400/40 transition-colors appearance-none">
-                  <option value="" className="bg-[#0d3320]">Select area of interest</option>
-                  <option value="investment" className="bg-[#0d3320]">Investment Partnership</option>
-                  <option value="operational" className="bg-[#0d3320]">Operational Collaboration</option>
-                  <option value="offtake" className="bg-[#0d3320]">Offtake Agreement</option>
-                  <option value="general" className="bg-[#0d3320]">General Enquiry</option>
+                <select
+                  name="interest"
+                  className="w-full bg-[#f5f5f3] border border-gray-200 rounded-lg px-4 py-3 text-[#0f0f0f] text-sm focus:outline-none focus:border-[#1B4FD8] transition-colors appearance-none"
+                >
+                  <option value="">Select area of interest</option>
+                  <option value="investment">Investment Partnership</option>
+                  <option value="operational">Operational Collaboration</option>
+                  <option value="offtake">Offtake Agreement</option>
+                  <option value="general">General Enquiry</option>
                 </select>
               </div>
               <div>
-                <label className="text-white/40 text-[10px] uppercase tracking-[0.2em] block mb-2">
+                <label className="text-[#999] text-[10px] uppercase tracking-[0.2em] block mb-2">
                   Message
                 </label>
                 <textarea
                   name="message"
                   rows={4}
                   placeholder="Briefly describe your interest and organisation..."
-                  className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white text-sm placeholder:text-white/25 focus:outline-none focus:border-green-400/40 transition-colors resize-none"
+                  className="w-full bg-[#f5f5f3] border border-gray-200 rounded-lg px-4 py-3 text-[#0f0f0f] text-sm placeholder:text-[#bbb] focus:outline-none focus:border-[#1B4FD8] transition-colors resize-none"
                 />
               </div>
               <button
                 type="submit"
-                className="w-full bg-white hover:bg-gray-100 text-[#0a0a0a] font-semibold py-3.5 rounded-full transition-colors text-sm"
+                className="w-full bg-[#1B4FD8] hover:bg-[#1741b8] text-white font-semibold py-3.5 rounded-full transition-colors text-sm"
               >
                 Submit Enquiry
               </button>
-              <p className="text-white/25 text-xs text-center">
+              <p className="text-[#bbb] text-xs text-center">
                 We review all partnership enquiries within 48 hours.
               </p>
             </form>
