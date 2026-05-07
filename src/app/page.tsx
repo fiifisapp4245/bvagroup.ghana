@@ -1,7 +1,10 @@
+'use client'
+
 import Image from 'next/image'
 import Link from 'next/link'
 import { ArrowRight } from 'lucide-react'
 import { AdvisorCard } from '@/components/advisor-card'
+import posthog from 'posthog-js'
 
 const WA_GENERAL =
   'https://wa.me/233000000000?text=Hello%20BVA%20Group%2C%20I%20found%20you%20on%20your%20website%20and%20I%20would%20like%20to%20learn%20more.'
@@ -71,7 +74,7 @@ export default function HomePage() {
             className="font-heading font-bold text-white leading-[1.08] mb-5 max-w-3xl"
             style={{ fontSize: 'clamp(2.25rem, 5vw, 3.75rem)' }}
           >
-            Developing Ghana's<br className="hidden sm:block" /> Future, Together.
+            Developing Ghana&apos;s<br className="hidden sm:block" /> Future, Together.
           </h1>
 
           <p className="text-white/65 text-base lg:text-lg leading-relaxed mb-9 max-w-xl">
@@ -80,6 +83,7 @@ export default function HomePage() {
 
           <Link
             href="/contact"
+            onClick={() => posthog.capture('hero_cta_clicked')}
             className="inline-flex items-center gap-2 bg-white hover:bg-gray-100 text-[#0a0a0a] font-semibold px-8 py-3.5 rounded-full transition-colors text-sm"
           >
             Get in Touch <ArrowRight size={14} />
@@ -143,6 +147,7 @@ export default function HomePage() {
               </ul>
               <Link
                 href="/properties"
+                onClick={() => posthog.capture('properties_section_cta_clicked')}
                 className="inline-flex items-center gap-2 text-[#0a0a0a] text-sm font-medium hover:gap-3 transition-all"
               >
                 View all projects <ArrowRight size={14} />
@@ -258,7 +263,7 @@ export default function HomePage() {
                 BVA Resources
               </h2>
               <p className="text-[#444] text-base leading-relaxed mb-6 max-w-[380px]">
-                Responsible mineral exploration and mining operations, anchored at the Kutukrom Gold Project in Ghana's Eastern Region.
+                Responsible mineral exploration and mining operations, anchored at the Kutukrom Gold Project in Ghana&apos;s Eastern Region.
               </p>
               <ul className="space-y-2.5 mb-8">
                 {['Mineral Exploration', 'Mining Operations', 'Sustainable Development'].map(
@@ -272,6 +277,7 @@ export default function HomePage() {
               </ul>
               <Link
                 href="/resources"
+                onClick={() => posthog.capture('resources_section_cta_clicked')}
                 className="inline-flex items-center gap-2 text-[#0a0a0a] text-sm font-medium hover:gap-3 transition-all"
               >
                 View operations <ArrowRight size={14} />
@@ -412,6 +418,7 @@ export default function HomePage() {
                   href={WA_GENERAL}
                   target="_blank"
                   rel="noopener noreferrer"
+                  onClick={() => posthog.capture('contact_band_whatsapp_clicked')}
                   className="inline-flex items-center justify-center gap-2.5 bg-[#25D366] hover:bg-[#20b559] text-white font-medium px-6 py-3.5 rounded-full transition-colors text-sm"
                 >
                   <WhatsAppIcon size={16} />
@@ -419,6 +426,7 @@ export default function HomePage() {
                 </a>
                 <Link
                   href="/contact"
+                  onClick={() => posthog.capture('contact_band_send_message_clicked')}
                   className="inline-flex items-center justify-center border border-white/12 hover:border-white/30 text-white font-medium px-6 py-3.5 rounded-full transition-colors text-sm"
                 >
                   Send a Message

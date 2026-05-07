@@ -3,6 +3,7 @@
 import Image from 'next/image'
 import { useState } from 'react'
 import { Plus, X } from 'lucide-react'
+import posthog from 'posthog-js'
 
 type Props = {
   imageSrc?: string
@@ -67,7 +68,13 @@ export function AdvisorCard({ imageSrc, initials, name, title, background, exper
 
         {/* Toggle button — top-right */}
         <button
-          onClick={() => setOpen((v) => !v)}
+          onClick={() => {
+            const next = !open
+            setOpen(next)
+            if (next) {
+              posthog.capture('leadership_card_expanded', { name, title })
+            }
+          }}
           aria-label={open ? 'Close details' : 'View details'}
           className="absolute top-3 right-3 z-10 w-8 h-8 rounded-full bg-white shadow-md flex items-center justify-center transition-transform hover:scale-105 active:scale-95"
         >

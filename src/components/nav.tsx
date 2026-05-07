@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { Menu, X, ArrowRight } from 'lucide-react'
+import posthog from 'posthog-js'
 
 const links = [
   { href: '/properties', label: 'Properties' },
@@ -121,6 +122,7 @@ export function Nav() {
         <div className="px-8 pb-10 pt-6 shrink-0 border-t border-white/10">
           <a
             href={WA_URL}
+            onClick={() => posthog.capture('mobile_nav_whatsapp_clicked')}
             className="flex items-center justify-center gap-2.5 w-full bg-[#25D366] hover:bg-[#20b559] text-white font-semibold py-4 rounded-full text-base transition-colors"
           >
             <WhatsAppIcon size={20} />

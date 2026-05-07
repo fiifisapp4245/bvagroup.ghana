@@ -1,5 +1,7 @@
 'use client'
 
+import posthog from 'posthog-js'
+
 const WA_URL =
   'https://wa.me/233000000000?text=Hello%20BVA%20Group%2C%20I%20found%20you%20on%20your%20website%20and%20I%20would%20like%20to%20learn%20more.'
 
@@ -10,6 +12,7 @@ export function WhatsAppButton() {
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Chat with BVA Group on WhatsApp"
+      onClick={() => posthog.capture('whatsapp_floating_button_clicked')}
       className="fixed bottom-6 right-6 z-50 md:hidden flex items-center justify-center w-14 h-14 rounded-full bg-[#25D366] shadow-lg shadow-black/25 transition-transform hover:scale-105 active:scale-95"
     >
       <svg width="26" height="26" viewBox="0 0 24 24" fill="white" aria-hidden>
