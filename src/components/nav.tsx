@@ -58,10 +58,10 @@ export function Nav() {
               <Link
                 key={href}
                 href={href}
-                className={`text-sm font-medium transition-colors ${
+                className={`font-heading text-sm transition-colors ${
                   pathname.startsWith(href)
-                    ? 'text-white underline underline-offset-4 decoration-white/50'
-                    : 'text-white/65 hover:text-white'
+                    ? 'text-white font-bold'
+                    : 'text-white/65 font-medium hover:text-white'
                 }`}
               >
                 {label}
