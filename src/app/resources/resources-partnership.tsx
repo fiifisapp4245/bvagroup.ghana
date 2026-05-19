@@ -37,7 +37,7 @@ export function ResourcesPartnership() {
               <a
                 href="mailto:resources@bvagroupgh.com"
                 onClick={() => posthog.capture('resources_partnership_email_clicked')}
-                className="inline-flex items-center justify-center gap-2.5 bg-white hover:bg-gray-100 text-[#0a0a0a] font-semibold px-6 py-3.5 rounded-full transition-colors text-sm"
+                className="inline-flex items-center justify-center gap-2.5 bg-white hover:bg-gray-100 text-[#0a0a0a] font-heading font-semibold px-6 py-3.5 rounded-full transition-colors text-sm"
               >
                 <Mail size={15} />
                 Request Partnership Brief
@@ -47,7 +47,7 @@ export function ResourcesPartnership() {
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => posthog.capture('resources_partnership_whatsapp_clicked')}
-                className="inline-flex items-center justify-center gap-2.5 border border-white/20 hover:border-white/40 text-white font-medium px-6 py-3.5 rounded-full transition-colors text-sm"
+                className="inline-flex items-center justify-center gap-2.5 border border-white/20 hover:border-white/40 text-white font-heading font-medium px-6 py-3.5 rounded-full transition-colors text-sm"
               >
                 <WhatsAppIcon size={15} />
                 WhatsApp Us
@@ -67,7 +67,7 @@ export function ResourcesPartnership() {
                     type="text"
                     name="name"
                     placeholder="Your full name"
-                    className="w-full bg-[#f5f5f3] border border-gray-200 rounded-lg px-4 py-3 text-[#0f0f0f] text-sm placeholder:text-[#bbb] focus:outline-none focus:border-[#1B4FD8] transition-colors"
+                    className="w-full bg-[#f5f5f3] border border-gray-200 rounded-lg px-4 py-3 text-[#0f0f0f] text-sm placeholder:text-[#bbb] focus:outline-none focus:border-[#0a0a0a] transition-colors"
                   />
                 </div>
                 <div>
@@ -78,7 +78,7 @@ export function ResourcesPartnership() {
                     type="text"
                     name="organisation"
                     placeholder="Company or institution"
-                    className="w-full bg-[#f5f5f3] border border-gray-200 rounded-lg px-4 py-3 text-[#0f0f0f] text-sm placeholder:text-[#bbb] focus:outline-none focus:border-[#1B4FD8] transition-colors"
+                    className="w-full bg-[#f5f5f3] border border-gray-200 rounded-lg px-4 py-3 text-[#0f0f0f] text-sm placeholder:text-[#bbb] focus:outline-none focus:border-[#0a0a0a] transition-colors"
                   />
                 </div>
               </div>
@@ -88,7 +88,7 @@ export function ResourcesPartnership() {
                 </label>
                 <select
                   name="interest"
-                  className="w-full bg-[#f5f5f3] border border-gray-200 rounded-lg px-4 py-3 text-[#0f0f0f] text-sm focus:outline-none focus:border-[#1B4FD8] transition-colors appearance-none"
+                  className="w-full bg-[#f5f5f3] border border-gray-200 rounded-lg px-4 py-3 text-[#0f0f0f] text-sm focus:outline-none focus:border-[#0a0a0a] transition-colors appearance-none"
                 >
                   <option value="">Select area of interest</option>
                   <option value="investment">Investment Partnership</option>
@@ -105,12 +105,12 @@ export function ResourcesPartnership() {
                   name="message"
                   rows={4}
                   placeholder="Briefly describe your interest and organisation..."
-                  className="w-full bg-[#f5f5f3] border border-gray-200 rounded-lg px-4 py-3 text-[#0f0f0f] text-sm placeholder:text-[#bbb] focus:outline-none focus:border-[#1B4FD8] transition-colors resize-none"
+                  className="w-full bg-[#f5f5f3] border border-gray-200 rounded-lg px-4 py-3 text-[#0f0f0f] text-sm placeholder:text-[#bbb] focus:outline-none focus:border-[#0a0a0a] transition-colors resize-none"
                 />
               </div>
               <button
                 type="submit"
-                className="w-full bg-[#1B4FD8] hover:bg-[#1741b8] text-white font-semibold py-3.5 rounded-full transition-colors text-sm"
+                className="w-full bg-[#0a0a0a] hover:bg-[#1a1a1a] text-white font-heading font-semibold py-3.5 rounded-full transition-colors text-sm"
               >
                 Submit Enquiry
               </button>

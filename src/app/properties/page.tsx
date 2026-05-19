@@ -38,7 +38,7 @@ const projects = [
 
 const statusDot: Record<'Sold' | 'Ongoing' | 'Coming Soon', string> = {
   Sold: 'bg-gray-400',
-  Ongoing: 'bg-[#1B4FD8]',
+  Ongoing: 'bg-[#0a0a0a]',
   'Coming Soon': 'bg-amber-400',
 }
 
@@ -226,7 +226,7 @@ export default function PropertiesPage() {
             <div className="col-span-12 lg:col-span-5 lg:flex lg:justify-end">
               <Link
                 href="/contact"
-                className="inline-flex items-center gap-2 bg-white hover:bg-gray-100 text-[#0a0a0a] font-semibold px-8 py-3.5 rounded-full transition-colors text-sm"
+                className="inline-flex items-center gap-2 bg-white hover:bg-gray-100 text-[#0a0a0a] font-heading font-semibold px-8 py-3.5 rounded-full transition-colors text-sm"
               >
                 Get in Touch <ArrowRight size={14} />
               </Link>

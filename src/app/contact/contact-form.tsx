@@ -152,7 +152,7 @@ export function ContactForm() {
         <button
           type="submit"
           disabled={loading}
-          className="inline-flex items-center gap-2 bg-[#0a0a0a] hover:bg-[#1a1a1a] disabled:opacity-50 text-white font-semibold px-7 py-3.5 rounded-full transition-colors text-sm shrink-0"
+          className="inline-flex items-center gap-2 bg-[#0a0a0a] hover:bg-[#1a1a1a] disabled:opacity-50 text-white font-heading font-semibold px-7 py-3.5 rounded-full transition-colors text-sm shrink-0"
         >
           {loading ? 'Sending…' : (
             <>Send Message <ArrowRight size={14} /></>

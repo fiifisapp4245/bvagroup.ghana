@@ -105,7 +105,7 @@ export default function ResourcesPage() {
             <TrackedLink
               href="/resources/kutukrom-gold-project"
               event="resources_hero_cta_clicked"
-              className="inline-flex items-center gap-2 bg-white hover:bg-gray-100 text-[#0a0a0a] font-semibold px-8 py-3.5 rounded-full transition-colors text-sm"
+              className="inline-flex items-center gap-2 bg-white hover:bg-gray-100 text-[#0a0a0a] font-heading font-semibold px-8 py-3.5 rounded-full transition-colors text-sm"
             >
               View Kutukrom Project <ArrowRight size={14} />
             </TrackedLink>
@@ -216,7 +216,7 @@ export default function ResourcesPage() {
               <TrackedLink
                 href="/resources/kutukrom-gold-project"
                 event="kutukrom_project_details_clicked"
-                className="inline-flex items-center gap-2 bg-[#1B4FD8] hover:bg-[#1741b8] text-white font-semibold px-7 py-3.5 rounded-full transition-colors text-sm"
+                className="inline-flex items-center gap-2 bg-[#0a0a0a] hover:bg-[#1a1a1a] text-white font-heading font-semibold px-7 py-3.5 rounded-full transition-colors text-sm"
               >
                 Full Project Details <ArrowRight size={14} />
               </TrackedLink>

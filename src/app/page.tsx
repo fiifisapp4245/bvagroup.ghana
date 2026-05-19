@@ -84,7 +84,7 @@ export default function HomePage() {
           <Link
             href="/contact"
             onClick={() => posthog.capture('hero_cta_clicked')}
-            className="inline-flex items-center gap-2 bg-white hover:bg-gray-100 text-[#0a0a0a] font-semibold px-8 py-3.5 rounded-full transition-colors text-sm"
+            className="inline-flex items-center gap-2 bg-white hover:bg-gray-100 text-[#0a0a0a] font-heading font-semibold px-8 py-3.5 rounded-full transition-colors text-sm"
           >
             Get in Touch <ArrowRight size={14} />
           </Link>
@@ -140,7 +140,7 @@ export default function HomePage() {
               <ul className="space-y-2.5 mb-8">
                 {['Residential', 'Commercial &amp; Retail', 'Industrial &amp; Administration'].map((type) => (
                   <li key={type} className="flex items-center gap-2.5 text-[#444] text-sm">
-                    <span className="w-1 h-1 rounded-full bg-[#1B4FD8] shrink-0" />
+                    <span className="w-1 h-1 rounded-full bg-[#0a0a0a] shrink-0" />
                     <span dangerouslySetInnerHTML={{ __html: type }} />
                   </li>
                 ))}
@@ -269,7 +269,7 @@ export default function HomePage() {
                 {['Mineral Exploration', 'Mining Operations', 'Sustainable Development'].map(
                   (item) => (
                     <li key={item} className="flex items-center gap-2.5 text-[#444] text-sm">
-                      <span className="w-1 h-1 rounded-full bg-[#1B4FD8] shrink-0" />
+                      <span className="w-1 h-1 rounded-full bg-[#0a0a0a] shrink-0" />
                       {item}
                     </li>
                   ),
@@ -419,7 +419,7 @@ export default function HomePage() {
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={() => posthog.capture('contact_band_whatsapp_clicked')}
-                  className="inline-flex items-center justify-center gap-2.5 bg-[#25D366] hover:bg-[#20b559] text-white font-medium px-6 py-3.5 rounded-full transition-colors text-sm"
+                  className="inline-flex items-center justify-center gap-2.5 bg-[#25D366] hover:bg-[#20b559] text-white font-heading font-medium px-6 py-3.5 rounded-full transition-colors text-sm"
                 >
                   <WhatsAppIcon size={16} />
                   WhatsApp Us
@@ -427,7 +427,7 @@ export default function HomePage() {
                 <Link
                   href="/contact"
                   onClick={() => posthog.capture('contact_band_send_message_clicked')}
-                  className="inline-flex items-center justify-center border border-white/12 hover:border-white/30 text-white font-medium px-6 py-3.5 rounded-full transition-colors text-sm"
+                  className="inline-flex items-center justify-center border border-white/12 hover:border-white/30 text-white font-heading font-medium px-6 py-3.5 rounded-full transition-colors text-sm"
                 >
                   Send a Message
                 </Link>

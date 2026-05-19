@@ -71,7 +71,7 @@ export function Nav() {
 
           <Link
             href="/contact"
-            className="hidden md:inline-flex items-center gap-1.5 bg-white hover:bg-gray-100 text-[#0a0a0a] text-sm font-medium px-5 py-2.5 rounded-full transition-colors shrink-0"
+            className="hidden md:inline-flex items-center gap-1.5 bg-white hover:bg-gray-100 text-[#0a0a0a] font-heading text-sm font-medium px-5 py-2.5 rounded-full transition-colors shrink-0"
           >
             Get in Touch
           </Link>
@@ -123,7 +123,7 @@ export function Nav() {
           <a
             href={WA_URL}
             onClick={() => posthog.capture('mobile_nav_whatsapp_clicked')}
-            className="flex items-center justify-center gap-2.5 w-full bg-[#25D366] hover:bg-[#20b559] text-white font-semibold py-4 rounded-full text-base transition-colors"
+            className="flex items-center justify-center gap-2.5 w-full bg-[#25D366] hover:bg-[#20b559] text-white font-heading font-semibold py-4 rounded-full text-base transition-colors"
           >
             <WhatsAppIcon size={20} />
             Chat on WhatsApp
