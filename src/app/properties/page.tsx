@@ -16,8 +16,7 @@ const projects = [
     region: 'Eastern Region, Ghana',
     status: 'Sold' as const,
     image: '/properties/IMG-20250320-WA0005.jpg',
-    description:
-      'A completed residential development delivering modern living standards in Ghana\'s Eastern Region. Fully sold — a testament to BVA\'s commitment to quality and timely delivery.',
+    rotation: '-2.5deg',
   },
   {
     name: 'Better Court',
@@ -25,8 +24,7 @@ const projects = [
     region: 'Ghana',
     status: 'Ongoing' as const,
     image: '/properties/IMG-20250321-WA0011.jpg',
-    description:
-      'An active commercial and retail development designed to serve growing business communities across Ghana. Construction is underway with strong progress.',
+    rotation: '1.8deg',
   },
   {
     name: 'New Palm View',
@@ -34,15 +32,14 @@ const projects = [
     region: 'Ghana',
     status: 'Coming Soon' as const,
     image: '/properties/IMG-20250321-WA0018.jpg',
-    description:
-      'BVA\'s next residential flagship — bringing premium, community-centred living to a new location. Full details and launch timeline coming soon.',
+    rotation: '-1.2deg',
   },
 ]
 
-const statusStyles: Record<'Sold' | 'Ongoing' | 'Coming Soon', string> = {
-  Sold: 'bg-white/10 text-white/70',
-  Ongoing: 'bg-[#1B4FD8]/20 text-[#6fa3ff]',
-  'Coming Soon': 'bg-amber-400/15 text-amber-300',
+const statusDot: Record<'Sold' | 'Ongoing' | 'Coming Soon', string> = {
+  Sold: 'bg-gray-400',
+  Ongoing: 'bg-[#1B4FD8]',
+  'Coming Soon': 'bg-amber-400',
 }
 
 const propertyTypes = [
@@ -107,13 +104,13 @@ export default function PropertiesPage() {
         </div>
       </section>
 
-      {/* ── 2. PROJECTS GRID ────────────────────────────────────── */}
-      <section className="bg-white py-24 lg:py-32">
+      {/* ── 2. PROJECTS ─────────────────────────────────────────── */}
+      <section className="bg-[#f0ede8] py-24 lg:py-32">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
 
-          <div className="grid grid-cols-12 gap-8 mb-16">
+          <div className="grid grid-cols-12 gap-8 mb-20">
             <div className="col-span-12 lg:col-span-5">
-              <p className="text-[#777] text-[10px] uppercase tracking-[0.25em] mb-4 font-medium">
+              <p className="text-[#999] text-[10px] uppercase tracking-[0.25em] mb-4 font-medium">
                 Our Projects
               </p>
               <h2
@@ -131,44 +128,59 @@ export default function PropertiesPage() {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-            {projects.map(({ name, type, region, status, image, description }) => (
+          {/* Big polaroid-style cards */}
+          <div className="flex flex-col md:flex-row items-center md:items-start justify-center gap-10 md:gap-6 lg:gap-8 py-6">
+            {projects.map(({ name, type, region, status, image, rotation }) => (
               <div
                 key={name}
-                className="group rounded-2xl overflow-hidden border border-gray-100 flex flex-col"
+                className="group relative shrink-0 w-[320px] md:w-[calc(33.333%-1.5rem)] lg:w-[380px]
+                           [transform:rotate(var(--card-rotate))]
+                           hover:[transform:rotate(0deg)_translateY(-12px)]
+                           hover:z-10
+                           transition-all duration-300 ease-out
+                           cursor-pointer"
+                style={{ '--card-rotate': rotation } as React.CSSProperties}
               >
-                {/* Image */}
-                <div className="relative h-64 overflow-hidden bg-gray-100">
+                {/* Card — full-bleed image with gradient */}
+                <div className="relative h-[480px] lg:h-[520px] rounded-[1.75rem] overflow-hidden shadow-xl group-hover:shadow-2xl transition-shadow duration-300">
                   <Image
                     src={image}
                     alt={name}
                     fill
                     className="object-cover transition-transform duration-500 group-hover:scale-105"
                   />
+                  {/* Gradient overlay */}
                   <div
                     className="absolute inset-0"
                     style={{
-                      background: 'linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 50%)',
+                      background:
+                        'linear-gradient(to top, rgba(0,0,0,0.88) 0%, rgba(0,0,0,0.35) 40%, transparent 68%)',
                     }}
                   />
-                  {/* Status badge */}
-                  <div className="absolute bottom-4 left-4">
-                    <span
-                      className={`inline-block text-[10px] uppercase tracking-[0.2em] font-medium px-3 py-1.5 rounded-full ${statusStyles[status]}`}
-                    >
-                      {status}
-                    </span>
-                  </div>
-                </div>
 
-                {/* Content */}
-                <div className="p-7 flex flex-col flex-1">
-                  <p className="text-[#999] text-[10px] uppercase tracking-[0.2em] mb-2 font-medium">
-                    {type}
-                  </p>
-                  <h3 className="font-heading font-bold text-[#0f0f0f] text-xl mb-3">{name}</h3>
-                  <p className="text-[#777] text-xs mb-2">{region}</p>
-                  <p className="text-[#555] text-sm leading-relaxed flex-1">{description}</p>
+                  {/* Details — pinned to bottom */}
+                  <div className="absolute bottom-0 inset-x-0 p-7">
+                    {/* Type eyebrow */}
+                    <p className="text-white/50 text-[10px] uppercase tracking-[0.25em] mb-2 font-medium">
+                      {type}
+                    </p>
+
+                    {/* Name */}
+                    <h3
+                      className="font-heading font-bold text-white leading-tight mb-3"
+                      style={{ fontSize: 'clamp(1.2rem, 2vw, 1.5rem)' }}
+                    >
+                      {name}
+                    </h3>
+
+                    {/* Region · Status */}
+                    <div className="flex items-center gap-2">
+                      <span className={`w-1.5 h-1.5 rounded-full shrink-0 ${statusDot[status]}`} />
+                      <span className="text-white/60 text-xs">
+                        {region} · {status}
+                      </span>
+                    </div>
+                  </div>
                 </div>
               </div>
             ))}
