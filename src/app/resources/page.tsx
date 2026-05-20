@@ -5,10 +5,74 @@ import { TrackedLink } from '@/components/tracked-link'
 import { ResourcesPartnership } from './resources-partnership'
 
 export const metadata: Metadata = {
-  title: 'BVA Resources | Mineral Exploration & Mining Operations',
+  title: 'BVA Resources | Mineral Exploration & Mining Operations Ghana',
   description:
-    "BVA Resources operates responsible mineral exploration and mining at the Kutukrom Gold Project in Ghana's Western Region. Seeking serious investment and operational partners.",
+    "BVA Resources operates responsible gold mineral exploration and mining at the Kutukrom Gold Project in Ghana's Western Region. ESG-driven operations with community partnership at the core.",
+  openGraph: {
+    title: 'BVA Resources | Mineral Exploration & Mining in Ghana',
+    description:
+      "Responsible gold exploration and mining at the Kutukrom Gold Project, Western Region Ghana. ESG-governed operations with transparent community and investor reporting.",
+    url: 'https://www.bvagroupgh.com/resources',
+    images: [
+      {
+        url: '/resources/IMG-20250324-WA0026.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'BVA Resources — Kutukrom Gold Project, Western Region Ghana',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'BVA Resources | Mineral Exploration & Mining in Ghana',
+    description:
+      "Responsible gold exploration and mining at the Kutukrom Gold Project in Ghana's Western Region.",
+    images: ['/resources/IMG-20250324-WA0026.jpg'],
+  },
+  alternates: {
+    canonical: 'https://www.bvagroupgh.com/resources',
+  },
 }
+
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.bvagroupgh.com' },
+      { '@type': 'ListItem', position: 2, name: 'Resources', item: 'https://www.bvagroupgh.com/resources' },
+    ],
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    name: 'BVA Resources',
+    description:
+      "BVA Resources operates responsible mineral exploration and mining at the Kutukrom Gold Project in Ghana's Western Region.",
+    url: 'https://www.bvagroupgh.com/resources',
+    industry: 'Mining and Mineral Exploration',
+    address: {
+      '@type': 'PostalAddress',
+      addressRegion: 'Western Region',
+      addressCountry: 'GH',
+    },
+    areaServed: { '@type': 'Country', name: 'Ghana' },
+    parentOrganization: {
+      '@type': 'Organization',
+      name: 'BVA Group Ghana',
+      url: 'https://www.bvagroupgh.com',
+    },
+    hasOfferCatalog: {
+      '@type': 'OfferCatalog',
+      name: 'Mining & Exploration Services',
+      itemListElement: [
+        { '@type': 'Offer', name: 'Mineral Exploration' },
+        { '@type': 'Offer', name: 'Mining Operations' },
+        { '@type': 'Offer', name: 'Sustainable Development' },
+      ],
+    },
+  },
+]
 
 const scopeItems = [
   {
@@ -62,6 +126,13 @@ const approaches = [
 export default function ResourcesPage() {
   return (
     <>
+      {jsonLd.map((schema, i) => (
+        <script
+          key={i}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+        />
+      ))}
       {/* ── 1. HERO ─────────────────────────────────────────────── */}
       <section className="relative min-h-[100svh] flex flex-col">
         <div className="absolute inset-0 overflow-hidden">

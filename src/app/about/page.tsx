@@ -7,8 +7,58 @@ import type { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'About BVA Group | Our Story, Mission & Values',
   description:
-    'Learn about BVA Group Ghana — a multi-vertical business group operating in real estate development and mineral exploration since 2018.',
+    'Learn about BVA Group Ghana — a responsible real estate developer and mineral exploration company founded in Accra in 2018. Our mission: build lasting value for Ghana with integrity.',
+  openGraph: {
+    title: 'About BVA Group Ghana | Our Story, Mission & Values',
+    description:
+      'Founded in Accra in 2018, BVA Group operates across real estate development and mineral exploration — driven by integrity, community accountability, and long-term thinking.',
+    url: 'https://www.bvagroupgh.com/about',
+    images: [
+      {
+        url: '/webaliser-_TPTXZd9mOo-unsplash.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'BVA Group Ghana — Built with conviction. Accountable to Ghana.',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'About BVA Group Ghana | Our Story, Mission & Values',
+    description:
+      'Founded in Accra in 2018, BVA Group builds lasting value across real estate and mineral exploration — driven by integrity and community accountability.',
+  },
+  alternates: {
+    canonical: 'https://www.bvagroupgh.com/about',
+  },
 }
+
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.bvagroupgh.com' },
+      { '@type': 'ListItem', position: 2, name: 'About', item: 'https://www.bvagroupgh.com/about' },
+    ],
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'AboutPage',
+    name: 'About BVA Group Ghana',
+    url: 'https://www.bvagroupgh.com/about',
+    description:
+      'BVA Group Ghana was founded in Accra in 2018 with a conviction that development should create lasting value for investors, communities, and the country.',
+    about: {
+      '@type': 'Organization',
+      name: 'BVA Group Ghana',
+      foundingDate: '2018',
+      foundingLocation: { '@type': 'Place', name: 'Accra, Ghana' },
+      mission:
+        "To develop Ghana's built and natural environment with integrity — building assets that create lasting value for investors, communities, and the country.",
+    },
+  },
+]
 
 const values = [
   {
@@ -36,6 +86,13 @@ const values = [
 export default function AboutPage() {
   return (
     <>
+      {jsonLd.map((schema, i) => (
+        <script
+          key={i}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+        />
+      ))}
       {/* ── 1. HERO ─────────────────────────────────────────────── */}
       <section className="bg-[#0a0a0a] pt-32 pb-24 lg:pt-40 lg:pb-32">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">

@@ -4,8 +4,66 @@ import { ContactForm } from './contact-form'
 export const metadata: Metadata = {
   title: 'Contact BVA Group Ghana',
   description:
-    'Get in touch with BVA Group — via WhatsApp, email, or phone. We respond to every inquiry within 24 hours.',
+    'Contact BVA Group Ghana via WhatsApp, email (info@bvagroupgh.com), or phone. For real estate enquiries, partnership proposals, or investment discussions — we respond within 24 hours.',
+  openGraph: {
+    title: 'Contact BVA Group Ghana',
+    description:
+      'Reach BVA Group Ghana via WhatsApp, email, or phone. For property enquiries, investment discussions, and partnership proposals — we respond to every message within 24 hours.',
+    url: 'https://www.bvagroupgh.com/contact',
+    images: [
+      {
+        url: '/webaliser-_TPTXZd9mOo-unsplash.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Contact BVA Group Ghana',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Contact BVA Group Ghana',
+    description:
+      'Reach BVA Group Ghana via WhatsApp, email, or phone. We respond to every enquiry within 24 hours.',
+  },
+  alternates: {
+    canonical: 'https://www.bvagroupgh.com/contact',
+  },
 }
+
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.bvagroupgh.com' },
+      { '@type': 'ListItem', position: 2, name: 'Contact', item: 'https://www.bvagroupgh.com/contact' },
+    ],
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'LocalBusiness',
+    name: 'BVA Group Ghana',
+    description:
+      'BVA Group Ghana — real estate development and mineral exploration, built with integrity.',
+    url: 'https://www.bvagroupgh.com',
+    email: 'info@bvagroupgh.com',
+    telephone: '+233000000000',
+    address: {
+      '@type': 'PostalAddress',
+      addressLocality: 'Accra',
+      addressCountry: 'GH',
+    },
+    openingHours: 'Mo-Fr 08:00-17:00',
+    contactPoint: [
+      {
+        '@type': 'ContactPoint',
+        contactType: 'customer service',
+        email: 'info@bvagroupgh.com',
+        availableLanguage: 'English',
+      },
+    ],
+  },
+]
 
 const WA_CONTACT =
   'https://wa.me/233000000000?text=Hello%20BVA%20Group%2C%20I%20found%20you%20on%20your%20website%20and%20I%20would%20like%20to%20start%20a%20conversation.'
@@ -59,6 +117,13 @@ const pathways = [
 export default function ContactPage() {
   return (
     <>
+      {jsonLd.map((schema, i) => (
+        <script
+          key={i}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+        />
+      ))}
       {/* ── 1. HERO ─────────────────────────────────────────────── */}
       <section className="bg-[#0a0a0a] pt-32 pb-24 lg:pt-40 lg:pb-32">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">

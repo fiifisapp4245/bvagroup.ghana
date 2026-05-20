@@ -6,8 +6,71 @@ import type { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'BVA Properties | Real Estate Development in Ghana',
   description:
-    'BVA Properties develops premium residential, commercial, and mixed-use projects across Ghana — built for lasting value.',
+    'BVA Properties develops premium residential, commercial, and mixed-use real estate across Ghana. Current projects include Gucci House, Better Court, and New Palm View — built for lasting value.',
+  openGraph: {
+    title: 'BVA Properties | Real Estate Development in Ghana',
+    description:
+      'Premium residential, commercial, and mixed-use property development across Ghana. Projects include Gucci House (Eastern Region), Better Court, and New Palm View.',
+    url: 'https://www.bvagroupgh.com/properties',
+    images: [
+      {
+        url: '/properties/IMG-20250321-WA0015.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'BVA Properties — Built for Ghana. Built to last.',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'BVA Properties | Real Estate Development in Ghana',
+    description:
+      'Premium residential, commercial, and mixed-use property development across Ghana — built for lasting value.',
+    images: ['/properties/IMG-20250321-WA0015.jpg'],
+  },
+  alternates: {
+    canonical: 'https://www.bvagroupgh.com/properties',
+  },
 }
+
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.bvagroupgh.com' },
+      { '@type': 'ListItem', position: 2, name: 'Properties', item: 'https://www.bvagroupgh.com/properties' },
+    ],
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'RealEstateAgent',
+    name: 'BVA Properties',
+    description:
+      'BVA Properties develops premium residential, commercial, and mixed-use real estate across Ghana — built for lasting value.',
+    url: 'https://www.bvagroupgh.com/properties',
+    address: {
+      '@type': 'PostalAddress',
+      addressLocality: 'Accra',
+      addressCountry: 'GH',
+    },
+    areaServed: { '@type': 'Country', name: 'Ghana' },
+    parentOrganization: {
+      '@type': 'Organization',
+      name: 'BVA Group Ghana',
+      url: 'https://www.bvagroupgh.com',
+    },
+    hasOfferCatalog: {
+      '@type': 'OfferCatalog',
+      name: 'Property Development Types',
+      itemListElement: [
+        { '@type': 'Offer', name: 'Residential Development' },
+        { '@type': 'Offer', name: 'Commercial & Retail Development' },
+        { '@type': 'Offer', name: 'Industrial & Administration Development' },
+      ],
+    },
+  },
+]
 
 const projects = [
   {
@@ -60,6 +123,13 @@ const propertyTypes = [
 export default function PropertiesPage() {
   return (
     <>
+      {jsonLd.map((schema, i) => (
+        <script
+          key={i}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+        />
+      ))}
       {/* ── 1. HERO ─────────────────────────────────────────────── */}
       <section className="relative min-h-[80svh] flex flex-col">
         <div className="absolute inset-0 overflow-hidden">

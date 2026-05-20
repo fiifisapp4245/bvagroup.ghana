@@ -6,8 +6,98 @@ import type { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'Leadership Team | BVA Group Ghana',
   description:
-    'Meet the experienced team behind BVA Group Ghana — leading real estate development and mineral exploration with integrity.',
+    'Meet the leadership team behind BVA Group Ghana — CEO Kwame Asante and directors Samuel Mensah, Kofi Boateng, and Michael Darko. Deep expertise in Ghanaian real estate and mineral exploration.',
+  openGraph: {
+    title: 'Leadership Team | BVA Group Ghana',
+    description:
+      'CEO Kwame Asante leads BVA Group with directors in Properties, Resources, and Finance — an experienced team with deep roots in Ghanaian real estate and mineral exploration.',
+    url: 'https://www.bvagroupgh.com/team',
+    images: [
+      {
+        url: '/webaliser-_TPTXZd9mOo-unsplash.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'BVA Group Ghana Leadership Team',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Leadership Team | BVA Group Ghana',
+    description:
+      'Meet the experienced leadership team behind BVA Group Ghana — experts in real estate development and mineral exploration.',
+  },
+  alternates: {
+    canonical: 'https://www.bvagroupgh.com/team',
+  },
 }
+
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.bvagroupgh.com' },
+      { '@type': 'ListItem', position: 2, name: 'Team', item: 'https://www.bvagroupgh.com/team' },
+    ],
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Person',
+    name: 'Kwame Asante',
+    jobTitle: 'Chief Executive Officer',
+    description:
+      'Kwame founded BVA Group in 2018 after a decade at Ghana Infrastructure Partners. He holds a degree in Civil Engineering from KNUST and an MBA from the University of Ghana Business School.',
+    worksFor: {
+      '@type': 'Organization',
+      name: 'BVA Group Ghana',
+      url: 'https://www.bvagroupgh.com',
+    },
+    alumniOf: [
+      { '@type': 'CollegeOrUniversity', name: 'Kwame Nkrumah University of Science and Technology (KNUST)' },
+      { '@type': 'CollegeOrUniversity', name: 'University of Ghana Business School' },
+    ],
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Person',
+    name: 'Samuel Mensah',
+    jobTitle: 'Director, Properties',
+    description:
+      'Samuel leads BVA Properties with over 15 years of experience in Ghanaian real estate development and project delivery.',
+    worksFor: {
+      '@type': 'Organization',
+      name: 'BVA Group Ghana',
+      url: 'https://www.bvagroupgh.com',
+    },
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Person',
+    name: 'Kofi Boateng',
+    jobTitle: 'Director, Resources',
+    description:
+      'Kofi brings deep geoscience expertise to BVA Resources, overseeing exploration methodology and site operations at the Kutukrom Gold Project.',
+    worksFor: {
+      '@type': 'Organization',
+      name: 'BVA Group Ghana',
+      url: 'https://www.bvagroupgh.com',
+    },
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Person',
+    name: 'Michael Darko',
+    jobTitle: 'Director, Finance',
+    description:
+      'Michael oversees financial strategy, investor relations, and capital allocation across both BVA verticals.',
+    worksFor: {
+      '@type': 'Organization',
+      name: 'BVA Group Ghana',
+      url: 'https://www.bvagroupgh.com',
+    },
+  },
+]
 
 const teamMembers = [
   {
@@ -39,6 +129,13 @@ const teamMembers = [
 export default function TeamPage() {
   return (
     <>
+      {jsonLd.map((schema, i) => (
+        <script
+          key={i}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+        />
+      ))}
       {/* ── 1. HERO ─────────────────────────────────────────────── */}
       <section className="bg-[#0a0a0a] pt-32 pb-24 lg:pt-40 lg:pb-32">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">

@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+# Block server-side API routes from indexing
+Disallow: /api/
+
+Sitemap: https://www.bvagroupgh.com/sitemap.xml
